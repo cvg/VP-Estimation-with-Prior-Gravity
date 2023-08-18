@@ -1,0 +1,7 @@
+add_subdirectory(base)
+add_subdirectory(estimators)
+add_subdirectory(solvers)
+add_subdirectory(refinement)
+
+pybind11_add_module(vp_estimation_with_prior_gravity_estimators ${UNCALIBRATED_VP_SOURCES})
+target_link_libraries(vp_estimation_with_prior_gravity_estimators PRIVATE ${UNCALIBRATED_VP_EXTERNAL_LIBRARIES} ${UNCALIBRATED_VP_INTERNAL_LIBRARIES})

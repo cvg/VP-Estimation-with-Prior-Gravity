@@ -1,0 +1,9 @@
+[submodule "third_party/pybind11"]
+	path = third_party/pybind11
+	url = https://github.com/pybind/pybind11.git
+[submodule "third_party/HighFive"]
+	path = third_party/HighFive
+	url = https://github.com/BlueBrain/HighFive.git
+[submodule "third_party/RansacLib"]
+	path = third_party/RansacLib
+	url = https://github.com/rpautrat/RansacLib.git
