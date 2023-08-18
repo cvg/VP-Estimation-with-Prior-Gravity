@@ -16,7 +16,7 @@ The following dependencies need to be installed on your system:
 ### Instructions
 
 Clone the repository and its submodules:
-```git clone --recurse-submodules https://github.com/rpautrat/uncalibrated-vp-from-lines.git```
+```git clone --recurse-submodules https://github.com/cvg/VP-Estimation-with-Prior-Gravity.git```
 
 Make sure that you have the necessary OpenCV libraries installed:
 ```sudo apt install libopencv-dev libopencv-contrib-dev libarpack++2-dev libarpack2-dev libsuperlu-dev```
@@ -43,29 +43,29 @@ Check out the [demo notebook](notebooks/demo_vp_estimation_prior_gravity.ipynb) 
 
 ## Which solver shall I use?
 
-<table style="width:100%">
+<table style="width:100%" align="center">
   <tr>
-    <th>Calibrated images</th>
-    <th>Known gravity</th>
-    <th>Solver to use</th>
+    <th align="center">Calibrated images</th>
+    <th align="center">Known gravity</th>
+    <th align="center">Solver to use</th>
   </tr>
   <tr>
-    <td rowspan="2">Yes</td>
-    <td>Yes</td>
-    <td>calibrated_100g</td>
+    <td align="center" rowspan="2">Yes</td>
+    <td align="center">Yes</td>
+    <td align="center">calibrated_100g</td>
   </tr>
   <tr>
-    <td>No</td>
-    <td>calibrated_210</td>
+    <td align="center">No</td>
+    <td align="center">calibrated_210</td>
   </tr>
   <tr>
-    <td rowspan="2">No</td>
-    <td>Yes</td>
-    <td>hybrid</td>
+    <td align="center" rowspan="2">No</td>
+    <td align="center">Yes</td>
+    <td align="center">hybrid</td>
   </tr>
   <tr>
-    <td>No</td>
-    <td>uncalibrated_220 or uncalibrated_211</td>
+    <td align="center">No</td>
+    <td align="center">uncalibrated_220 or uncalibrated_211</td>
   </tr>
 </table>
 
@@ -74,16 +74,16 @@ Check out the [demo notebook](notebooks/demo_vp_estimation_prior_gravity.ipynb) 
 
 Download the test datasets: [YorkUrbanDB](https://www.elderlab.yorku.ca/resources/york-urban-line-segment-database-information/), [ScanNet](http://www.scan-net.org/) (follow the instruction in the [NeurVPS ReadMe](https://github.com/zhou13/neurvps)), and [Lamar](https://lamar.ethz.ch/lamar/) (we use the 4 sequences of the validation query images of the CAB building, located in `CAB/sessions/query_val_hololens`).
 
-Then run one of the scripts `runners/run_york_urban.py`, `runners/run_scannet.py`, or `runners/run_lamar.py`. For example, a typical example on YorkUrban would be:
+Then run one of the scripts `runners/run_york_urban.py`, `runners/run_scannet.py`, or `runners/run_lamar.py`. For example, a typical run on YorkUrban would be:
 ```
 python runnners/run_york_urban.py <name of the solver> <path to the YorkUrban dataset> --nms non_orth --line_detector lsd --use_gt_gravity --magsac_scoring
 ```
 
 Here are a few explanations on the options:
-`nms`: use 'non_orth' to use our non minimal solver, or 'ceres' to use the same followed by a Ceres refinement (slower).
-`line_detector`: 'lsd' (see https://github.com/iago-suarez/pytlsddee) and 'deeplsd' (see https://github.com/cvg/DeepLSD) are currently supported. DeepLSD will probably produce better results but requires a GPU for fast inference.
-`use_gt_gravity`: when using this flag, it will be using the ground truth gravity of the dataset (disabled by default).
-`magsac_scoring`: when using this flag, RANSAC will use the MAGSAC scoring (disabled by default).
+- `nms`: use 'non_orth' to use our non minimal solver, or 'ceres' to use the same followed by a Ceres refinement (slower).
+- `line_detector`: 'lsd' (see https://github.com/iago-suarez/pytlsddee) and 'deeplsd' (see https://github.com/cvg/DeepLSD) are currently supported. DeepLSD will probably produce better results but requires a GPU for fast inference.
+- `use_gt_gravity`: when using this flag, it will be using the ground truth gravity of the dataset (disabled by default).
+- `magsac_scoring`: when using this flag, RANSAC will use the MAGSAC scoring (disabled by default).
 
 
 ## Bibtex
