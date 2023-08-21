@@ -70,7 +70,7 @@ python runnners/run_york_urban.py <name of the solver> <path to the YorkUrban da
 
 Here are a few explanations on the options:
 - `nms`: use 'non_orth' to use our non minimal solver, or 'ceres' to use the same followed by a Ceres refinement (slower).
-- `line_detector`: 'lsd' (see https://github.com/iago-suarez/pytlsddee) and 'deeplsd' (see https://github.com/cvg/DeepLSD) are currently supported. DeepLSD will probably produce better results but requires a GPU for fast inference.
+- `line_detector`: 'lsd' (see https://github.com/iago-suarez/pytlsd) and 'deeplsd' (see https://github.com/cvg/DeepLSD) are currently supported. DeepLSD will probably produce better results but requires a GPU for fast inference.
 - `use_gt_gravity`: when using this flag, it will be using the ground truth gravity of the dataset (disabled by default).
 - `magsac_scoring`: when using this flag, RANSAC will use the MAGSAC scoring (disabled by default).
 
