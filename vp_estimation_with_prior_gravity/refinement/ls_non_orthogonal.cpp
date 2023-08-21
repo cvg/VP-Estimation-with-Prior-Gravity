@@ -1,4 +1,5 @@
 #include "base/functions.h"
+#include "refinement/util.h"
 #include "refinement/ls_non_orthogonal.h"
 #include "refinement/cost_functions.h"
 
@@ -58,8 +59,7 @@ void NonOrthogonalLeastSquares(const std::vector<int>& sample,
             problem.AddResidualBlock(vp_cost_function, vp_loss, vp.data(), &f);
         }
         if (problem.HasParameterBlock(vp.data())) {
-            ceres::LocalParameterization* homo3d_parameterization = new ceres::HomogeneousVectorParameterization(3);
-            problem.SetParameterization(vp.data(), homo3d_parameterization);
+            SetSphereManifold<3>(&problem, vp.data());
         }
         if (problem.HasParameterBlock(&f))
             problem.SetParameterBlockConstant(&f);

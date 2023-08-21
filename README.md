@@ -11,15 +11,12 @@ The following dependencies need to be installed on your system:
 - GCC >= 9
 - CMake >= 3.17
 - [Eigen >= 3.4](https://eigen.tuxfamily.org)
-- [Ceres 2.0.0](http://ceres-solver.org/)
+- [Ceres](http://ceres-solver.org/)
 
 ### Instructions
 
 Clone the repository and its submodules:
 ```git clone --recurse-submodules https://github.com/cvg/VP-Estimation-with-Prior-Gravity.git```
-
-Make sure that you have the necessary OpenCV libraries installed:
-```sudo apt install libopencv-dev libopencv-contrib-dev libarpack++2-dev libarpack2-dev libsuperlu-dev```
 
 Install the C++ library:
 ```
