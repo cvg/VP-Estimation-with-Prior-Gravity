@@ -12,6 +12,7 @@
 
 #include "base/functions.h"
 #include "base/pose.h"
+#include "refinement/util.h"
 #include "refinement/cost_functions.h"
 
 
@@ -39,7 +40,7 @@ Eigen::Matrix3d Vp2Rot(const std::vector<V3D> &vp_triplet, Eigen::Matrix3d* R) {
     if (problem.HasParameterBlock(qvec.data())) {
         ceres::LocalParameterization* quaternion_parameterization = 
             new ceres::QuaternionParameterization;
-        problem.SetParameterization(qvec.data(), quaternion_parameterization);
+        SetQuaternionManifold(&problem, qvec.data());
     }
 
     // Solve the optimization problem and update the VP

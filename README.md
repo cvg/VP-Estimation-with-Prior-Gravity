@@ -11,7 +11,7 @@ The following dependencies need to be installed on your system:
 - GCC >= 9
 - CMake >= 3.17
 - [Eigen >= 3.4](https://eigen.tuxfamily.org)
-- [Ceres 2.0.0](http://ceres-solver.org/)
+- [Ceres](http://ceres-solver.org/)
 
 ### Instructions
 
