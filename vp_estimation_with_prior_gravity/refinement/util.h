@@ -1,0 +1,37 @@
+#ifndef UNCALIBRATED_VP_REFINEMENT_UTIL_H_ 
+#define UNCALIBRATED_VP_REFINEMENT_UTIL_H_ 
+
+#include <ceres/ceres.h>
+#include <ceres/rotation.h>
+
+inline void SetQuaternionManifold(ceres::Problem* problem, double* qvec) {
+#ifdef CERES_PARAMETERIZATION_ENABLED
+  problem->SetParameterization(qvec, new ceres::QuaternionParameterization);
+#else
+  problem->SetManifold(qvec, new ceres::QuaternionManifold);
+#endif
+}
+
+inline void SetSubsetManifold(int size, const std::vector<int>& constant_params,
+                              ceres::Problem* problem, double* params) {
+#ifdef CERES_PARAMETERIZATION_ENABLED
+  problem->SetParameterization(
+      params, new ceres::SubsetParameterization(size, constant_params));
+#else
+  problem->SetManifold(params,
+                       new ceres::SubsetManifold(size, constant_params));
+#endif
+}
+
+template <int size>
+inline void SetSphereManifold(ceres::Problem* problem, double* params) {
+#ifdef CERES_PARAMETERIZATION_ENABLED
+  problem->SetParameterization(
+      params, new ceres::HomogeneousVectorParameterization(size));
+#else
+  problem->SetManifold(params, new ceres::SphereManifold<size>);
+#endif
+}
+
+#endif
+

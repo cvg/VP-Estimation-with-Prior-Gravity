@@ -26,6 +26,10 @@ option(OPENMP_ENABLED "Whether to enable OpenMP parallelization" ON)
 ################################################################################
 find_package(Eigen3 REQUIRED)
 find_package(Ceres REQUIRED)
+if(${CERES_VERSION} VERSION_LESS "2.2.0")
+    # ceres 2.2.0 changes the interface of local parameterization
+    add_definitions("-DCERES_PARAMETERIZATION_ENABLED")
+endif()
 
 ################################################################################
 # Compiler specific configuration

@@ -1,5 +1,6 @@
 #include "base/functions.h"
 #include "base/pose.h"
+#include "refinement/util.h"
 #include "refinement/ls_orthogonal.h"
 #include "refinement/cost_functions.h"
 
@@ -63,7 +64,7 @@ void OrthogonalLeastSquares(const std::vector<int>& sample,
     if (problem.HasParameterBlock(qvec.data())) {
         ceres::LocalParameterization* quaternion_parameterization = 
             new ceres::QuaternionParameterization;
-        problem.SetParameterization(qvec.data(), quaternion_parameterization);
+        SetQuaternionManifold(&problem, qvec.data());
     }
     if (problem.HasParameterBlock(&f) && (!optimize_f)) {
         problem.SetParameterBlockConstant(&f);

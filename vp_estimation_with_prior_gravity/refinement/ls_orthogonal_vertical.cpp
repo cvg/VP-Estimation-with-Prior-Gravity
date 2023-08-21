@@ -1,5 +1,6 @@
 #include "base/functions.h"
 #include "base/pose.h"
+#include "refinement/util.h"
 #include "refinement/ls_orthogonal_vertical.h"
 #include "refinement/cost_functions.h"
 
@@ -85,7 +86,7 @@ void OrthogonalVerticalLeastSquares(const std::vector<int>& sample,
     if (problem.HasParameterBlock(rvec.data())) {
         ceres::LocalParameterization* homo2d_parameterization = 
             new ceres::HomogeneousVectorParameterization(2);
-        problem.SetParameterization(rvec.data(), homo2d_parameterization);
+        SetSphereManifold<2>(&problem, rvec.data());
     }
     if (problem.HasParameterBlock(&f) && (!optimize_f)) {
         problem.SetParameterBlockConstant(&f);
