@@ -7,3 +7,9 @@
 [submodule "third_party/RansacLib"]
 	path = third_party/RansacLib
 	url = https://github.com/rpautrat/RansacLib.git
+[submodule "third_party/DeepLSD"]
+	path = third_party/DeepLSD
+	url = https://github.com/cvg/DeepLSD
+[submodule "third_party/GlueStick"]
+	path = third_party/GlueStick
+	url = https://github.com/cvg/GlueStick
