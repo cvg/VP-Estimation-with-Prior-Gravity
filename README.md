@@ -18,9 +18,6 @@ The following dependencies need to be installed on your system:
 Clone the repository and its submodules:
 ```git clone --recurse-submodules https://github.com/cvg/VP-Estimation-with-Prior-Gravity.git```
 
-Make sure that you have the necessary OpenCV libraries installed:
-```sudo apt install libopencv-dev libopencv-contrib-dev libarpack++2-dev libarpack2-dev libsuperlu-dev```
-
 Install the C++ library:
 ```
 mkdir build && cd build
