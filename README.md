@@ -21,18 +21,10 @@ Clone the repository and its submodules:
 Make sure that you have the necessary OpenCV libraries installed:
 ```sudo apt install libopencv-dev libopencv-contrib-dev libarpack++2-dev libarpack2-dev libsuperlu-dev```
 
-Install the C++ library:
-```
-mkdir build && cd build
-cmake ..
-make -j
-cd ..
-```
-
 Install the necessary requirements and the Python package:
 ```
 pip install -r requirements.txt
-pip install -e .
+pip install -Ive .
 ```
 
 
