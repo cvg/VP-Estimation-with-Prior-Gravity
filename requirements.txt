@@ -28,7 +28,6 @@ jupyter
 cython
 flow_vis
 
-git+https://github.com/iago-suarez/pytlsd.git
--e ./third_party/DeepLSD
--e ./third_party/GlueStick
-
+-e git+https://github.com/iago-suarez/pytlsd.git#egg=pytlsd
+-e git+https://github.com/cvg/DeepLSD.git#egg=deeplsd
+-e git+https://github.com/cvg/GlueStick.git#egg=gluestick
