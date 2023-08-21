@@ -29,6 +29,6 @@ cython
 flow_vis
 
 git+https://github.com/iago-suarez/pytlsd.git
--e ./third-party/DeepLSD
--e ./third-party/GlueStick
+-e ./third_party/DeepLSD
+-e ./third_party/GlueStick
 
