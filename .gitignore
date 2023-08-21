@@ -2,6 +2,10 @@ experiments/
 tmp/
 data/
 
+src/pytlsd
+src/deeplsd
+src/gluestick
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

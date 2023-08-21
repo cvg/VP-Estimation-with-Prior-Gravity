@@ -18,18 +18,10 @@ The following dependencies need to be installed on your system:
 Clone the repository and its submodules:
 ```git clone --recurse-submodules https://github.com/cvg/VP-Estimation-with-Prior-Gravity.git```
 
-Install the C++ library:
-```
-mkdir build && cd build
-cmake ..
-make -j
-cd ..
-```
-
 Install the necessary requirements and the Python package:
 ```
 pip install -r requirements.txt
-pip install -e .
+pip install -Ive .
 ```
 
 
