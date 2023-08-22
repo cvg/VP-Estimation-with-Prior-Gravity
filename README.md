@@ -1,5 +1,5 @@
 # VP-Estimation-with-Prior-Gravity
-Vanishing Point Estimation in Uncalibrated Images with Prior Gravity Direction (ICCV 2023)
+Implementation of the paper [Vanishing Point Estimation in Uncalibrated Images with Prior Gravity Direction](https://arxiv.org/abs/2308.10694) (ICCV 2023)
 
 ![teaser](assets/images/teaser.png)
 
