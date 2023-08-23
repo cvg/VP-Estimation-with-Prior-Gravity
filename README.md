@@ -1,6 +1,8 @@
 # VP-Estimation-with-Prior-Gravity
 Implementation of the paper [Vanishing Point Estimation in Uncalibrated Images with Prior Gravity Direction](https://arxiv.org/abs/2308.10694) (ICCV 2023)
 
+We propose a set of **new solvers to extract the 3 orthogonal vanishing points** of an **uncalibrated** image (i.e. unknown focal length), **given a prior on the gravity direction**. **This repo assumes a Manhattan world** with 3 main directions x, y, z. We also give the implementation of previous solvers that also work without prior gravity or with calibrated images.
+
 ![teaser](assets/images/teaser.png)
 
 ## Installation
